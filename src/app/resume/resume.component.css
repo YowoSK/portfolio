@@ -1,0 +1,17 @@
+accordion-group::ng-deep .btn-link {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+
+}
+accordion-group::ng-deep .card-header {
+       background-color: rgb(77, 116, 209);
+}
+.white {
+    color: rgb(255, 255, 255);
+}
+.text-blue {
+    color: rgb(77, 116, 209);
+}
+.btn-blue {
+    color: rgb(77, 116, 209);
+}

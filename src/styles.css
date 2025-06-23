@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+.container {
+    max-width: 1140px;
+}
+.tag {
+    padding: 0 20px;
+    height: 30px;
+    width: fit-content;
+    font-size: 14px;
+    line-height: 30px;
+    border-radius: 25px;
+    background-color: rgb(77, 116, 209);
+    color: rgb(255, 246, 246);
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    background-color: rgb(50, 50, 50);
+    border-radius: 1px;
+}
+.carousel-indicators .active {
+    background-color: rgb(77, 116, 209);
+}
+.btn-primary {
+    background-color: rgb(77, 116, 209);
+}

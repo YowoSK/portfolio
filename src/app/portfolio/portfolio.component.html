@@ -1,0 +1,169 @@
+<div class="container">
+  <div class="mb-2">
+    <div>
+      <button class="btn btn-outline-primary mb-2 me-2" (click)="isCollapsed = !isCollapsed">Filter</button>
+      <button class="btn btn-outline-secondary mb-2" (click)="ResetFilters()" [hidden]="!filtering">Reset Filters</button>
+    </div>
+    <div [collapse]="isCollapsed" [isAnimated]="true">
+      <div class="border mb-2 shadow-sm" style="width: 250px;">
+        <form>
+          <div class="row mx-0">
+            <div class="col">
+              <small><b>Languages:</b></small>
+              <div class="form-group">
+                <div class="form-check">
+                  <input
+                  name="javascript"
+                  type="checkbox"
+                  class="form-check-input position-static me-2"
+                  (change)="Filter()"
+                  [(ngModel)]="javascript"
+                  >
+                  <label class="form-check-label small">JavaScript</label>
+                </div>
+                <div class="form-check">
+                  <input
+                  name="ython"
+                  type="checkbox"
+                  class="form-check-input position-static me-2"
+                  (change)="Filter()"
+                  [(ngModel)]="python"
+                  >
+                  <label class="form-check-label small">Python</label>
+                </div>
+                <div class="form-check">
+                  <input
+                  name="java"
+                  type="checkbox"
+                  class="form-check-input position-static me-2"
+                  (change)="Filter()"
+                  [(ngModel)]="java"
+                  >
+                  <label class="form-check-label small">Java</label>
+                </div>
+                <div class="form-check">
+                  <input
+                  name="Angular"
+                  type="checkbox"
+                  class="form-check-input position-static me-2"
+                  (change)="Filter()"
+                  [(ngModel)]="angular"
+                  >
+                  <label class="form-check-label small">Angular</label>
+                </div>
+                <div class="form-check">
+                  <input
+                  name="React"
+                  type="checkbox"
+                  class="form-check-input position-static me-2"
+                  (change)="Filter()"
+                  [(ngModel)]="react"
+                  >
+                  <label class="form-check-label small">React</label>
+                </div>
+                <div class="form-check">
+                  <input
+                  name="htmlcss"
+                  type="checkbox"
+                  class="form-check-input position-static me-2"
+                  (change)="Filter()"
+                  [(ngModel)]="htmlcss"
+                  >
+                  <label class="form-check-label small">HTML/CSS</label>
+                </div>
+                <div class="form-check">
+                  <input
+                    name="SQLite"
+                    type="checkbox"
+                    class="form-check-input position-static me-2"
+                    (change)="Filter()"
+                    [(ngModel)]="sqlite"
+                  >
+                  <label class="form-check-label small">SQLite</label>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="col">
+              <small><b>Other:</b></small>
+              <div class="form-group">
+                <div class="form-check">
+                  <input
+                  name="linux"
+                  type="checkbox"
+                  class="form-check-input position-static me-2"
+                  (change)="Filter()"
+                  [(ngModel)]="linux"
+                  >
+                  <label class="form-check-label small">Linux</label>
+                </div>
+                <div class="form-check">
+                  <input
+                  name="android"
+                  type="checkbox"
+                  class="form-check-input position-static me-2"
+                  (change)="Filter()"
+                  [(ngModel)]="android"
+                  >
+                  <label class="form-check-label small">Android</label>
+                </div>
+                <div class="form-check">
+                  <input
+                  name="hardware"
+                  type="checkbox"
+                  class="form-check-input position-static me-2"
+                  (change)="Filter()"
+                  [(ngModel)]="raspberry"
+                  >
+                  <label class="form-check-label small">raspberry</label>
+                </div>
+                <!-- <div class="form-check">
+                  <input
+                  name="opencv"
+                  type="checkbox"
+                  class="form-check-input position-static me-2"
+                  (change)="Filter()"
+                  [(ngModel)]="opencv"
+                  >
+                  <label class="form-check-label small">Open CV</label>
+                </div> -->
+                <div class="form-check">
+                  <input
+                  name="testing"
+                  type="checkbox"
+                  class="form-check-input position-static me-2"
+                  (change)="Filter()"
+                  [(ngModel)]="testing"
+                  >
+                  <label class="form-check-label small">Testing</label>
+                </div>
+                <div class="form-check">
+                  <input
+                  name="Colaboration"
+                  type="checkbox"
+                  class="form-check-input position-static me-2"
+                  (change)="Filter()"
+                  [(ngModel)]="colaboration"
+                  >
+                  <label class="form-check-label small">Colaboration</label>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <div
+      *ngFor="let project of projects"
+      class="col-lg-4 col-md-6 mb-4"
+      style="max-width: 380px; min-width: 380px"
+    >
+      <app-project-card [project]="project"></app-project-card>
+    </div>
+  </div>
+</div>

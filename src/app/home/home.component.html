@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg shadow border m-1">
+            <div class="text-center">
+                <h2 class="p-2">About Me</h2>
+                <img src="../../assets/aboutphoto.jpg" alt="profile picture of Filip Šulík" width="256" height="256" class="rounded-circle img-fluid">
+                <p class="p-2">Hello! I’m Filip Šulík, a computer enthusiast from Poprad. I have a variety of skills, which you can explore in the Projects section. My goal is to grow as a programmer and continuously improve. When I’m not coding, I enjoy riding my motorcycle, practicing judo and Krav Maga, and playing hockeyball. I’m always open to new challenges and opportunities, so feel free to reach out if you’d like to collaborate or have a chat.</p>
+            </div>
+        </div>
+        
+        <div class="col-lg shadow border m-1">
+            <div class="text-center">
+                <h2 class="p-2">Featured Projects</h2>
+                <h4>{{featuredProject.name}}</h4>
+            </div>
+            <carousel>
+                <div *ngFor="let picture of featuredProject.pictures">
+                  <slide
+                    ><img
+                      src="{{ picture }}"
+                      alt="slide"
+                      style="display: block; width: 100%;"
+                  /></slide>
+                </div>
+              </carousel>
+              <p class="mt-2">{{featuredProject.summary}}</p>
+              <p>Visit portfolio section to see more.</p>
+            
+        </div>
+    </div>
+</div>

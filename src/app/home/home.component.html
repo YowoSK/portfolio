@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" role="main">
     <div class="row">
         <div class="col-lg shadow border m-1">
             <div class="text-center">
@@ -13,14 +13,16 @@
                 <h2 class="p-2">Featured Projects</h2>
                 <h4>{{featuredProject.name}}</h4>
             </div>
-            <carousel>
+            <carousel aria-label="Featured project images carousel">
                 <div *ngFor="let picture of featuredProject.pictures">
-                  <slide
-                    ><img
+                  <slide>
+                    <img
                       src="{{ picture }}"
-                      alt="slide"
+                      alt="Image of {{ featuredProject.name }}"
                       style="display: block; width: 100%;"
-                  /></slide>
+                      loading="lazy"
+                    />
+                  </slide>
                 </div>
               </carousel>
               <p class="mt-2">{{featuredProject.summary}}</p>

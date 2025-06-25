@@ -1,5 +1,5 @@
 import { Component, Renderer2 } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-resume',
@@ -13,8 +13,9 @@ export class ResumeComponent {
   isExperienceOpen: boolean = false;
   isCertificationsOpen: boolean = false;
 
-  constructor(private titleService: Title, private renderer: Renderer2) {
+  constructor(private titleService: Title, private metaService: Meta, private renderer: Renderer2) {
     this.titleService.setTitle('Filip Šulík - Resume');
+    this.metaService.updateTag({ name: 'description', content: 'View the resume of Filip Šulík, software developer. Skills, education, experience, and certifications.' });
   }
   DownloadFile() {
     const link = this.renderer.createElement('a');

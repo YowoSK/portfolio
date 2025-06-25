@@ -1,13 +1,15 @@
-<div class="container text-center">
-  <button (click)="DownloadFile()" class="btn btn-primary mb-5 shadow border">
+<div class="container text-center" role="main">
+  <button (click)="DownloadFile()" class="btn btn-primary mb-5 shadow border" aria-label="See my CV">
     See my CV
   </button>
   <div class="pb-2">
-    <accordion [isAnimated]="true" class="shadow">
+    <accordion [isAnimated]="true" class="shadow" aria-label="Resume sections">
       <accordion-group [(isOpen)]="isSkillsOpen">
         <button
           class="btn btn-block justify-content-between d-flex w-100"
           accordion-heading
+          [attr.aria-expanded]="isSkillsOpen"
+          aria-controls="skills-section"
         >
           <div style="visibility: hidden">></div>
           <div class="btn-link">Skills</div>
@@ -16,7 +18,7 @@
             <div *ngIf="isSkillsOpen" class="white">↓</div>
           </div>
         </button>
-        <div class="row" style="text-align: left">
+        <div class="row" style="text-align: left" id="skills-section">
           <div class="col">
             <h3>Progrming languages</h3>
             <ul>

@@ -1,12 +1,12 @@
-<div class="container">
+<div class="container" role="main">
   <div class="mb-2">
     <div>
-      <button class="btn btn-outline-primary mb-2 me-2" (click)="isCollapsed = !isCollapsed">Filter</button>
-      <button class="btn btn-outline-secondary mb-2" (click)="ResetFilters()" [hidden]="!filtering">Reset Filters</button>
+      <button class="btn btn-outline-primary mb-2 me-2" (click)="isCollapsed = !isCollapsed" aria-label="Toggle filter">Filter</button>
+      <button class="btn btn-outline-secondary mb-2" (click)="ResetFilters()" [hidden]="!filtering" aria-label="Reset filters">Reset Filters</button>
     </div>
     <div [collapse]="isCollapsed" [isAnimated]="true">
       <div class="border mb-2 shadow-sm" style="width: 250px;">
-        <form>
+        <form aria-label="Project filter form">
           <div class="row mx-0">
             <div class="col">
               <small><b>Languages:</b></small>
@@ -18,18 +18,20 @@
                   class="form-check-input position-static me-2"
                   (change)="Filter()"
                   [(ngModel)]="javascript"
+                  id="filter-javascript"
                   >
-                  <label class="form-check-label small">JavaScript</label>
+                  <label class="form-check-label small" for="filter-javascript">JavaScript</label>
                 </div>
                 <div class="form-check">
                   <input
-                  name="ython"
+                  name="python"
                   type="checkbox"
                   class="form-check-input position-static me-2"
                   (change)="Filter()"
                   [(ngModel)]="python"
+                  id="filter-python"
                   >
-                  <label class="form-check-label small">Python</label>
+                  <label class="form-check-label small" for="filter-python">Python</label>
                 </div>
                 <div class="form-check">
                   <input
@@ -38,8 +40,9 @@
                   class="form-check-input position-static me-2"
                   (change)="Filter()"
                   [(ngModel)]="java"
+                  id="filter-java"
                   >
-                  <label class="form-check-label small">Java</label>
+                  <label class="form-check-label small" for="filter-java">Java</label>
                 </div>
                 <div class="form-check">
                   <input
@@ -48,8 +51,9 @@
                   class="form-check-input position-static me-2"
                   (change)="Filter()"
                   [(ngModel)]="angular"
+                  id="filter-angular"
                   >
-                  <label class="form-check-label small">Angular</label>
+                  <label class="form-check-label small" for="filter-angular">Angular</label>
                 </div>
                 <div class="form-check">
                   <input
@@ -58,8 +62,9 @@
                   class="form-check-input position-static me-2"
                   (change)="Filter()"
                   [(ngModel)]="react"
+                  id="filter-react"
                   >
-                  <label class="form-check-label small">React</label>
+                  <label class="form-check-label small" for="filter-react">React</label>
                 </div>
                 <div class="form-check">
                   <input
@@ -68,8 +73,9 @@
                   class="form-check-input position-static me-2"
                   (change)="Filter()"
                   [(ngModel)]="htmlcss"
+                  id="filter-htmlcss"
                   >
-                  <label class="form-check-label small">HTML/CSS</label>
+                  <label class="form-check-label small" for="filter-htmlcss">HTML/CSS</label>
                 </div>
                 <div class="form-check">
                   <input
@@ -78,8 +84,9 @@
                     class="form-check-input position-static me-2"
                     (change)="Filter()"
                     [(ngModel)]="sqlite"
+                    id="filter-sqlite"
                   >
-                  <label class="form-check-label small">SQLite</label>
+                  <label class="form-check-label small" for="filter-sqlite">SQLite</label>
                 </div>
 
               </div>
@@ -95,8 +102,9 @@
                   class="form-check-input position-static me-2"
                   (change)="Filter()"
                   [(ngModel)]="linux"
+                  id="filter-linux"
                   >
-                  <label class="form-check-label small">Linux</label>
+                  <label class="form-check-label small" for="filter-linux">Linux</label>
                 </div>
                 <div class="form-check">
                   <input
@@ -105,8 +113,9 @@
                   class="form-check-input position-static me-2"
                   (change)="Filter()"
                   [(ngModel)]="android"
+                  id="filter-android"
                   >
-                  <label class="form-check-label small">Android</label>
+                  <label class="form-check-label small" for="filter-android">Android</label>
                 </div>
                 <div class="form-check">
                   <input
@@ -115,8 +124,9 @@
                   class="form-check-input position-static me-2"
                   (change)="Filter()"
                   [(ngModel)]="raspberry"
+                  id="filter-hardware"
                   >
-                  <label class="form-check-label small">raspberry</label>
+                  <label class="form-check-label small" for="filter-hardware">raspberry</label>
                 </div>
                 <!-- <div class="form-check">
                   <input
@@ -135,8 +145,9 @@
                   class="form-check-input position-static me-2"
                   (change)="Filter()"
                   [(ngModel)]="testing"
+                  id="filter-testing"
                   >
-                  <label class="form-check-label small">Testing</label>
+                  <label class="form-check-label small" for="filter-testing">Testing</label>
                 </div>
                 <div class="form-check">
                   <input
@@ -145,8 +156,9 @@
                   class="form-check-input position-static me-2"
                   (change)="Filter()"
                   [(ngModel)]="colaboration"
+                  id="filter-colaboration"
                   >
-                  <label class="form-check-label small">Colaboration</label>
+                  <label class="form-check-label small" for="filter-colaboration">Colaboration</label>
                 </div>
 
               </div>

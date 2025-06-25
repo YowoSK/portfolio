@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Title, Meta } from '@angular/platform-browser';
 import { Project } from '../_models/Project';
 import { Tag } from '../_models/Tag';
 import { ProjectsService } from '../_Services/projects.service';
@@ -32,8 +32,9 @@ export class PortfolioComponent implements OnInit {
   testing: boolean = false;
   sqlite: boolean = false;
 
-  constructor(private titleService: Title, private projectService: ProjectsService) {
+  constructor(private titleService: Title, private metaService: Meta, private projectService: ProjectsService) {
     this.titleService.setTitle('Filip Šulík - Portfolio');
+    this.metaService.updateTag({ name: 'description', content: 'Browse the portfolio projects of Filip Šulík, software developer.' });
   }
   Filter(){
     let filterTags: Tag[] = [];

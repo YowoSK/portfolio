@@ -1,16 +1,18 @@
-<div class="modal-header">
-  <h2>{{ project.name }}</h2>
-  <button class="btn-close" (click)="bsModalRef.hide()"></button>
+<div class="modal-header" role="banner">
+  <h2 id="project-modal-title">{{ project.name }}</h2>
+  <button class="btn-close" (click)="bsModalRef.hide()" aria-label="Close project details"></button>
 </div>
-<div class="modal-body">
-  <carousel>
+<div class="modal-body" role="main" aria-labelledby="project-modal-title">
+  <carousel aria-label="Project images carousel">
     <div *ngFor="let picture of project.pictures">
-      <slide
-        ><img
+      <slide>
+        <img
           src="{{ picture }}"
-          alt="slide"
+          alt="Image of {{ project.name }}"
           style="display: block; width: 100%"
-      /></slide>
+          loading="lazy"
+        />
+      </slide>
     </div>
   </carousel>
   <h3 class="mt-2">Description</h3>
@@ -20,7 +22,7 @@
     <a target="_blank" href="{{project.projectLink}}">here</a>
   </p>
   <hr />
-  <div class="d-flex flex-wrap">
+  <div class="d-flex flex-wrap" aria-label="Project tags">
     <div *ngFor="let tag of project.tags">
       <div class="tag me-2 mb-1" [style.background-color]="tag.color">
         {{tag}}

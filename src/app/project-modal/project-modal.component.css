@@ -1,0 +1,43 @@
+/* Modal hero image and consistent border radius */
+:host ::ng-deep .modal-content {
+	border-radius: var(--radius);
+	overflow: hidden;
+}
+.project-hero img{
+	display:block;
+	width:100%;
+	height:auto;
+	object-fit:cover;
+}
+.modal-body h3, .modal-body p{
+	color: #e6eef8;
+}
+
+/* Use site theme colors for modal so it matches the rest of the site */
+:host ::ng-deep .modal-content {
+	background: var(--surface) !important;
+	color: #e6eef8 !important;
+	box-shadow: 0 12px 40px rgba(2,6,23,0.6);
+}
+:host ::ng-deep .modal-header, :host ::ng-deep .modal-footer{
+	background: transparent !important;
+	border-bottom: none !important;
+	border-top: none !important;
+}
+:host ::ng-deep .btn-close{
+	filter: brightness(0.9) invert(1);
+}
+
+/* Gallery styles */
+.project-gallery{ display:flex; flex-direction:column; gap:0.6rem; }
+.gallery-viewport{ position:relative; display:flex; align-items:center; justify-content:center; background: rgba(0,0,0,0.06); border-radius: var(--radius); overflow:hidden; }
+.gallery-viewport img{ width:100%; height:auto; display:block; object-fit:contain; max-height:60vh; }
+.gallery-nav{ position:absolute; top:50%; transform:translateY(-50%); background: rgba(0,0,0,0.45); color: #fff; border:none; width:44px; height:44px; display:inline-flex; align-items:center; justify-content:center; font-size:1.6rem; cursor:pointer; border-radius:50%; }
+.gallery-nav.prev{ left:12px; }
+.gallery-nav.next{ right:12px; }
+.gallery-nav:focus{ outline:2px solid var(--accent); }
+.gallery-thumbs{ display:flex; gap:0.5rem; justify-content:center; overflow:auto; padding:6px 2px; }
+.thumb{ border: 2px solid transparent; padding:2px; background:transparent; border-radius:6px; }
+.thumb img{ width:64px; height:40px; object-fit:cover; display:block; border-radius:4px; }
+.thumb.active{ border-color: var(--accent); box-shadow: 0 6px 18px rgba(2,6,23,0.45); }
+.visually-hidden{ position:absolute !important; width:1px !important; height:1px !important; padding:0 !important; margin:-1px !important; overflow:hidden !important; clip:rect(0,0,0,0) !important; white-space:nowrap !important; border:0 !important; }

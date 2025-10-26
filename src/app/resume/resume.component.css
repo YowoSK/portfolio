@@ -1,17 +1,21 @@
 accordion-group::ng-deep .btn-link {
-    color: rgb(255, 255, 255);
+    color: #ffffff;
     text-decoration: none;
-
 }
 accordion-group::ng-deep .card-header {
-       background-color: rgb(77, 116, 209);
+    background: linear-gradient(90deg, rgba(77,116,209,0.14), rgba(77,116,209,0.06));
 }
-.white {
-    color: rgb(255, 255, 255);
-}
-.text-blue {
-    color: rgb(77, 116, 209);
-}
-.btn-blue {
-    color: rgb(77, 116, 209);
-}
+.white { color: #ffffff }
+.text-blue { color: var(--accent) }
+.btn-blue { color: var(--accent) }
+/* Make list items and links readable on dark background */
+.resume-section ul li { color: #e6eef8 }
+.resume-section h3.text-primary { color: var(--accent) }
+
+/* Ensure headings have enough contrast */
+h2, h3 { color: #e6eef8 }
+
+/* Helpers to replace inline styles in template */
+.invisible { visibility: hidden; }
+.arrow-width { width: 10.95px; display:flex; align-items:center; justify-content:center }
+.text-left { text-align: left }

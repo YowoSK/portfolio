@@ -1,25 +1,163 @@
-/* You can add global styles to this file, and also import other style files */
-.container {
-    max-width: 1140px;
+/* Global modernized styles */
+:root{
+    --bg: #0f1724; /* deep background for contrast */
+    --surface: #0b1220; /* card surface */
+    --muted: #94a3b8;
+        --accent: #6a8ef0; /* higher-contrast brand blue */
+    --glass: rgba(255,255,255,0.04);
+    --radius: 12px;
+    --max-width: 1100px;
 }
-.tag {
-    padding: 0 20px;
-    height: 30px;
-    width: fit-content;
-    font-size: 14px;
-    line-height: 30px;
-    border-radius: 25px;
-    background-color: rgb(77, 116, 209);
-    color: rgb(255, 246, 246);
+
+/* Light theme variables */
+:root[data-theme='light'], [data-theme='light']{
+    --bg: #f7fbff;
+    --surface: #ffffff;
+    --muted: #475569;
+    --accent: #3358d4;
+    --glass: rgba(2,6,23,0.03);
 }
-.carousel-control-next-icon,
-.carousel-control-prev-icon {
-    background-color: rgb(50, 50, 50);
-    border-radius: 1px;
+html,body{
+    height:100%;
 }
-.carousel-indicators .active {
-    background-color: rgb(77, 116, 209);
+body{
+    margin:0;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(180deg, #071025 0%, #0b1220 100%);
+    color:#e6eef8;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
 }
-.btn-primary {
-    background-color: rgb(77, 116, 209);
+.container{
+    max-width:var(--max-width);
+    margin-left:auto;
+    margin-right:auto;
+    padding: 1rem;
+}
+
+/* Header / hero */
+.jumbotron{
+    padding:2.5rem 1rem;
+    background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius: var(--radius);
+    box-shadow: 0 6px 24px rgba(2,6,23,0.6);
+    margin-bottom: 1rem;
+}
+.jumbotron h1{
+    margin:0;
+    font-weight:700;
+    letter-spacing: -0.5px;
+}
+.jumbotron h4{
+    margin-top:0.25rem;
+    margin-bottom:0;
+    color:var(--muted);
+    font-weight:600;
+}
+
+/* social icons */
+.icon-link{display:inline-flex;align-items:center;justify-content:center;color:var(--muted);border-radius:6px;padding:3px}
+.icon-link:hover{color:var(--accent);background:var(--glass)}
+.icon{display:inline-block;line-height:0}
+
+/* Global overrides for ngx-bootstrap modal (modals are appended to <body>) */
+.modal-backdrop.show {
+    background: rgba(2,6,23,0.6) !important;
+}
+.modal-content {
+    background: var(--surface) !important;
+    color: #e6eef8 !important;
+    border-radius: var(--radius) !important;
+    box-shadow: 0 20px 60px rgba(2,6,23,0.6) !important;
+    border: none !important;
+}
+.modal-header, .modal-footer{
+    background: transparent !important;
+    border: none !important;
+}
+.modal-open .modal {
+    outline: none;
+}
+.modal .btn-close{
+    filter: invert(1) brightness(1.2) !important;
+}
+
+/* Navigation */
+nav[aria-label="Main navigation"]{
+    margin-bottom:1rem;
+}
+.nav .nav-link{
+    color:var(--muted);
+    padding:0.5rem 1rem;
+    border-radius:8px;
+}
+.nav .nav-link:hover{
+    color:var(--accent) !important;
+    background: var(--glass);
+}
+
+/* Use an explicit active class to indicate the current route with good contrast */
+.nav .nav-link.active{
+    color: #ffffff !important;
+    background: linear-gradient(90deg, rgba(77,116,209,0.14), rgba(77,116,209,0.05));
+    box-shadow: 0 6px 20px rgba(77,116,209,0.06);
+}
+
+/* Map common bootstrap utility classes to accessible colors for dark theme */
+.text-secondary{ color: var(--muted) !important; }
+.text-primary{ color: var(--accent) !important; }
+.text-muted{ color: var(--muted) !important; }
+
+/* Cards */
+.card{
+    border-radius:12px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border: none;
+}
+.card .card-body{
+    padding:1.25rem;
+}
+.card-title{
+    margin-bottom:0.25rem;
+    font-weight:600;
+}
+.card-text{
+    color:var(--muted);
+    font-size:0.95rem;
+}
+
+/* responsive grid for portfolio cards */
+.projects-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap:1rem;
+    align-items:start;
+}
+
+/* tags */
+.tag{
+    display:inline-block;
+    padding: 6px 12px;
+    font-size:12px;
+    line-height:1;
+    border-radius:999px;
+    color: #fff;
+    background: var(--accent);
+    box-shadow: 0 4px 12px rgba(2,6,23,0.45);
+}
+
+/* buttons */
+.btn-primary{
+    background: linear-gradient(90deg, var(--accent), #3b5cc0);
+    border:none;
+    box-shadow: 0 6px 18px rgba(77,116,209,0.12);
+}
+
+/* small helpers */
+.muted{color:var(--muted)}
+
+/* mobility improvements */
+@media (max-width:768px){
+    .jumbotron{padding:1.25rem}
+    .container{padding:0.75rem}
 }

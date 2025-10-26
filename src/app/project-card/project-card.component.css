@@ -1,0 +1,10 @@
+/* Ensure cards match modal border radius and have highly visible text */
+.card{
+	border-radius: var(--radius);
+	overflow: hidden;
+}
+.card .card-title{ color: #ffffff }
+.card .card-text{ color: #e6eef8; }
+.card-footer{ background: transparent; border-top: none; padding: 0.75rem 1rem }
+.tag{ color: #fff }
+

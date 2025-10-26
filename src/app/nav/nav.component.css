@@ -1,0 +1,25 @@
+/* Topbar styles for responsive navigation */
+.topbar{
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	gap:1rem;
+}
+.nav-toggle{
+	display:none;
+	background:transparent;
+	border:none;
+	color:var(--muted);
+	font-size:1.2rem;
+}
+.nav-toggle:focus{outline:2px solid rgba(77,116,209,0.18);}
+
+@media (max-width: 768px){
+	.nav .nav { display: none; }
+	.nav-toggle{ display:block }
+	.nav.open .nav{ display:flex; flex-direction:column; gap:0.5rem; align-items:center; }
+}
+
+.nav a{color:var(--muted);}
+.nav a:focus{outline:2px solid rgba(77,116,209,0.12)}
+

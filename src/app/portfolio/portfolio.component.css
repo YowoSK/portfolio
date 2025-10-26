@@ -1,0 +1,28 @@
+/* Styles for portfolio filter box and layout */
+.filter-panel{
+	width: 100%;
+	max-width: 320px;
+	background: rgba(255,255,255,0.02);
+	border-radius: 10px;
+	padding: 0.5rem;
+}
+
+/* Smooth, fast collapse animation for filter panel */
+.filter-panel{
+	transition: max-height 220ms ease, opacity 180ms ease, transform 200ms ease;
+	max-height: 1200px; /* large enough to contain content when open */
+	opacity: 1;
+}
+.filter-panel.collapsed{
+	max-height: 0;
+	opacity: 0;
+	transform: translateY(-6px);
+	padding-top: 0; padding-bottom: 0; overflow: hidden;
+}
+
+@media (max-width: 768px){
+	.filter-panel{max-width:100%}
+}
+
+.filter-buttons{display:flex;gap:0.5rem;flex-wrap:wrap}
+

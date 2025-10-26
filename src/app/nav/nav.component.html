@@ -1,18 +1,24 @@
 <nav class="navbar-expand-nd border-bottom mb-3" aria-label="Main navigation">
-  <div class="container">
-    <ul class="nav justify-content-center">
-      <li class="nav-item">
-        <a class="nav-link text-secondary" routerLink="/home" routerLinkActive="text-dark" aria-label="Home">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-secondary" routerLink="/portfolio" routerLinkActive="text-dark" aria-label="Portfolio">Portfolio</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-secondary" routerLink="/resume" routerLinkActive="text-dark" aria-label="Resume">Resume</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-secondary" routerLink="contact" routerLinkActive="text-dark" aria-label="Contact">Contact</a>
-      </li>
-    </ul>
+  <div class="container topbar">
+    <div class="brand" aria-hidden="true">&nbsp;</div>
+    <button class="nav-toggle" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen" aria-controls="main-nav" aria-label="Toggle navigation">
+      ☰
+    </button>
+    <div [class.open]="isMenuOpen" id="main-nav" class="nav">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link text-secondary" routerLink="/home" routerLinkActive="active" aria-label="Home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-secondary" routerLink="/portfolio" routerLinkActive="active" aria-label="Portfolio">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-secondary" routerLink="/resume" routerLinkActive="active" aria-label="Resume">Resume</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-secondary" routerLink="contact" routerLinkActive="active" aria-label="Contact">Contact</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>

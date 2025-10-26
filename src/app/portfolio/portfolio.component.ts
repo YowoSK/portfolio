@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { trigger, transition, style, query, stagger, animate } from '@angular/animations';
 import { Title, Meta } from '@angular/platform-browser';
 import { Project } from '../_models/Project';
 import { Tag } from '../_models/Tag';
@@ -8,6 +9,17 @@ import { ProjectsService } from '../_Services/projects.service';
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.css']
+  ,
+  animations: [
+    trigger('listAnimation', [
+      transition('* <=> *', [
+        // initially hide entering elements
+        query(':enter', [style({ opacity: 0, transform: 'translateY(8px)' })], { optional: true }),
+        // stagger enter animation
+        query(':enter', stagger('100ms', [animate('220ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))]), { optional: true })
+      ])
+    ])
+  ]
 })
 export class PortfolioComponent implements OnInit {
   ngOnInit(): void {

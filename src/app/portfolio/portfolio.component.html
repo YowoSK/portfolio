@@ -5,7 +5,7 @@
       <button class="btn btn-outline-secondary mb-2" (click)="ResetFilters()" [hidden]="!filtering" aria-label="Reset filters">Reset Filters</button>
     </div>
     <div [collapse]="isCollapsed" [isAnimated]="true">
-      <div class="border mb-2 shadow-sm" style="width: 250px;">
+      <div class="border mb-2 shadow-sm filter-panel" [class.collapsed]="isCollapsed">
         <form aria-label="Project filter form">
           <div class="row mx-0">
             <div class="col">
@@ -169,12 +169,8 @@
     </div>
 
   </div>
-  <div class="row">
-    <div
-      *ngFor="let project of projects"
-      class="col-lg-4 col-md-6 mb-4"
-      style="max-width: 380px; min-width: 380px"
-    >
+  <div class="projects-grid" role="list" [@listAnimation]="projects.length">
+    <div *ngFor="let project of projects" role="listitem">
       <app-project-card [project]="project"></app-project-card>
     </div>
   </div>
